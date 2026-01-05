@@ -1,0 +1,93 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Effects of Drone Downwash on Pesticide Coverage</title>
+     <link rel="stylesheet" href="../static/css/overview.css">
+</head>
+
+<body>
+    <header class="header">
+        <img src="../static/images/wayne.png" alt="Wayne State University" class="uni-logo">
+        <div class="right">
+            <h1 class="title">Effects of Drone Downwash on Pesticide Coverage</h1>
+            <nav class="nav-bar">
+                <a href="index.html" class="l">Home</a>
+                <a href="overview.html" class="l">Overview</a>
+                <a href="research.html" class="l">Research</a>
+                <a href="code.html" class="l">Code</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class = "overview-container">
+        <div class="project">
+            <h2>Project Overview</h2>
+            <h3 class="sub">Abstract</h3>
+            <p class="abstract">Advancements in multirotor drone technologies for agricultural industries across the world enable the potential to optimize pesticide application performance, thereby reducing environmental pollution. 
+                While research has been conducted to understand droplet dynamics and the effects of drone downwash, the role of drone-induced airflow in promoting droplet deposition on the abaxial leaf surface, a common site of pathogen development, has not been thoroughly studied. 
+                In this work, we aimed to quantify the motion associated with downwash to determine the flight parameters for optimal abaxial spray deposition throughout soybean plant canopies. To do so, we collected deposition samples on water-sensitive paper (WSP) by running spray 
+                trials with a drone operating at different speeds and heights (5 ft, 10 ft, and 15 ft above subjects) and an electric backpack chemical sprayer.  Additionally, we recorded video footage of the plants during a set of trials with the same flight parameters and used software 
+                to quantify leaf motion. WSPs were digitized to determine deposition, coverage density, and droplet count, and statistical methods were employed to establish the significance of flight height and canopy position on these metrics. We found that the 10 ft trial achieved the 
+                greatest deposition coverage, indicating that an optimal flight height exists between 5 ft and 15 ft. Furthermore, we found that the downwash-induced leaf motion of 12.6 cm/s during a 10 ft trial, significantly higher than the 2.8 cm/s motion under the ambient conditions of the backpack trials, 
+                leads to increased spray penetration throughout the plant canopy. In fact, drone-based applications produced more uniform coverage across plant layers, and coverage was significantly concentrated in the upper canopy. Future work should test a wider range of flight heights and regress canopy motion 
+                with coverage rate to further understand how motion influences pesticide applications.</p>
+            
+            <h3 class="sub">Our goals</h3>
+             <p>We aimed to further understand how multirotor drone downwash may be harnessed to increase precision fungicide application to the abaxial side of leaves throughout plant canopies. More specifically, our objectives were to:</p>
+            <ol class="goals">
+                <li>Quantify leaf motion caused by drone downwash on a crop (soybean) canopy based on video input.</li>
+                <li>Find the relation, using data-driven statistical methods, between drone flight parameters and abaxial deposition throughout the canopy of soybean plants.</li>
+                <li>Determine flight parameters for optimal abaxial spray deposition.</li>
+            </ol>
+        </div>
+        <div class = "methods">
+            <h2>Methods</h2>
+            <div class="txt">
+                <p>Field experiments were conducted at a farm in Michigan to evaluate the effect of multirotor drone downwash
+                    on pesticide deposition on the abaxial (under) side of soybean leaves. Four spraying different trials were performed: three with a drone flying at heights of 
+                    5 ft, 10 ft, and 15 ft from the top of the canopy, and a fourth trial using a 4-gallon 18-volt 
+                    cordless electric backpack chemical sprayer to provide a comparison between applications with and without downwash. 
+                    During each trial, 5 plants were marked along a row of crops, and each plant had a piece of 1” x 3” Water-Sensitive Paper (WSP). The WSP changes color in 
+                    the location water hits and was attached to the underside of a leaf at three canopy levels: the Top, Middle, and Bottom. WSP were collected and digitized to determine coverage metrics, 
+                    which were analyzed using statistical methods to establish the significance of flight height and canopy position on deposition, coverage density, and droplet count. Furthermore, 
+                    a set of video recordings were taken during a set of separate trials with the same spraying parameters to quantify the leaf motion caused by drone downwash.
+                </p>
+
+                <p>To accurately measure plant motion from a video input, software was developed to track a total of 100 points on different leaves and estimate their motion vectors. To select good points to 
+                    track, Shi-Tomasi Corner Detection (Shi and Tomasi, 1993) was 
+                    employed, and to estimate the pixel displacement of these points in consecutive frames, Lucas-Kanade Optical Flow (Patel and Upadhyay, 2013) was used. 
+                    The capability to define a region of interest was implemented to eliminate the selection of points on non-important objects in the background. To convert tracked pixel displacements to a 
+                    motion metric, a centimeter-to-pixel scale was established by using the OpenCV library to find contours of a rectangular object of known length—a 30 cm ruler—captured from a camera height of 0.5 m away from the target, 
+                    the same distance used during the experimental recordings of the soybean plants.
+                </p>
+            </div>
+            <div class="method-images">
+                <div class="im">
+                    <img src="../static/images/f1.jpg">
+                    <p class="de">Water-Sensitive Paper attachment to plant canopy – latex gloves used to prevent sample contamination</p>
+                </div>
+                <div class="im">
+                    <img src="../static/images/f2.jpg"> 
+                    <p class="de">Demonstration of Backpack Sprayer Operation, height of ~0.5m above plant canopy</p>
+                </div>
+                <div class="im">
+                    <img src="../static/images/wspg.jpg"> 
+                    <p class="de">WSP scanned into greyscale, WSP image droplet recognition – red outline around detected droplets, with green submask to make outlines visually clear</p>
+                </div>
+                <div class="im">
+                    <img src="../static/images/drone.jpg"> 
+                    <p class="de">DJI Agras T50 Drone used in the spraying & data collection experiments</p>
+                </div>
+                <div class="im2">
+                    <img src="../static/images/ui.jpg"> 
+                    <p class="de">Flight Controller UI from trial, showing 8.0 gal/acre application rate, 500 μm droplet size, 5.0 ft/s flight speed, 15.0 ft height above canopy</p>
+                </div>
+
+            </div>
+            
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap');
+
+:root {
+    --green: #0C5449;
+    --dg: #053432;
+    --gold: #FFCC33;
+    --white: #FFFFFF;
+    --lg: #f0f0f0;
+    --tg: #555;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+    line-height: 1.7;
+}
+body {
+
+    .header {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        justify-content: center;
+        .uni-logo {
+            grid-column: 1;
+            width: 18vw;
+            height: auto;
+            padding: 2.5vh 3vw 2.5vh 3vw;
+            margin: 0vh 2vw 0vh 2vw;
+        }
+        .right {
+            padding-top: 5vh;
+            .title {
+                text-align: center;
+                font-size: 5.4vh; 
+                grid-column: 2;
+                font-weight: 500;
+            }
+            .nav-bar {
+                display: flex;
+                justify-content: center;
+                padding: 2vh 0vw 4vh 0vw;
+                .l {
+                    text-align: cen;
+                    margin: 0vh 1vw 0vh 1vw;
+                    padding: 2vh 1vw 2vh 1vw;
+                    font-size: 3vh;
+                    color: var(--green);
+                    font-weight: 400;
+                    &:hover {
+                        color: var(--dg);
+                        background-color: var(--lg);
+                    }    
+                }
+            }
+        }
+    }
+    .home-container {
+        background-color: var(--lg);
+        padding: 6vh 8vw 8vh 8vw;
+        min-height: 80vh;
+        
+        .people {
+            background-color: var(--white);
+            padding: 6vh 6vw 6vh 6vw;
+            margin-bottom: 6vh;
+            border-radius: 1vh;
+            h2 {
+                font-size: 4.5vh;
+                color: var(--dg);
+                font-weight: 500;
+                margin-bottom: 8vh;
+                text-align: center;
+            }
+            .people-card {
+                display: flex;
+                flex-direction: column;
+                .p1, .p3 {
+                    display: grid;
+                    grid-template-columns: auto 1fr;
+                    align-items: start;
+                    .desc {
+                        margin-left: 3vw;
+                    }
+                }
+                .p2 {
+                    display: grid;
+                    grid-template-columns: 1fr auto;
+                    .desc {
+                        margin: 0vh 3vw 0vh 3vw;
+                    }
+                }
+                .p1, .p2, .p3 {
+                    padding-bottom: 9vh;
+                    .desc {
+                        padding-top: 2vh;
+                    }
+                    img {
+                        width: 15vw;
+                        height: 15vw;
+                        object-fit: cover;
+                        border-radius: 3vh;
+                    }
+                    .person-name {
+                        font-size: 3.2vh;
+                        color: var(--green);
+                        font-weight: 500;
+                        margin-bottom: 1vh;
+                    }
+                    .person-description {
+                        font-size: 2.4vh;
+                        color: var(--tg);
+                    }
+                    .contact {
+                        margin-top: 4vh;
+                        font-size: 2.4vh;
+                        color: var(--tg);
+                    }
+                }
+            }
+        }
+        .info {
+            background-color: var(--white);
+            padding: 5vh 6vw 5vh 6vw;
+            border-radius: 1vh;
+            .sub {
+                font-size: 4.5vh;
+                color: var(--dg);
+                font-weight: 500;
+                margin-bottom: 2.5vh;
+            }
+            .acknowledgements {
+                font-size: 2.4vh;
+                color: var(--tg);
+            }
+        }
+    }
+}

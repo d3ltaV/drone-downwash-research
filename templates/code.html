@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Effects of Drone Downwash on Pesticide Coverage</title>
+    <link rel="stylesheet" href="../static/css/code.css">
+</head>
+
+<body>
+    <header class="header">
+        <img src="../static/images/wayne.png"
+             alt="Wayne State University"
+             class="uni-logo">
+
+        <div class="right">
+            <h1 class="title">Effects of Drone Downwash on Pesticide Coverage</h1>
+
+            <nav class="nav-bar">
+                <a href="index.html" class="l">Home</a>
+                <a href="overview.html" class="l">Overview</a>
+                <a href="research.html" class="l">Research</a>
+                <a href="code.html" class="l">Code</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="code-container">
+        <section class="git">
+            <h2>GitHub</h2>
+             <div class="git-links">
+                <a href="https://github.com/d3ltaV/motion-quant-back" target="_blank">
+                    Backend Repository
+                </a>
+                <a href="https://github.com/d3ltaV/motion-quant-front" target="_blank">
+                    Frontend Repository
+                </a>
+            </div>
+        </section>
+
+        <section class="overview">
+            <h2>Motion Quantification</h2>
+
+            <p class="pa">
+                To quantify leaf motion caused by drone downwash, we use the
+                Lucas–Kanade (LK) optical flow method. Optical flow is the pattern of
+                apparent motion of a feature between two consecutive frames, described
+                by a two-dimensional vector field. Each vector, represented as
+                <strong>(u, v)</strong>, shows the movement of a feature from the first
+                frame to the second.
+            </p>
+
+            <p class="pa">
+                The components of the optical flow vector are defined as:
+            </p>
+
+            <p class="pa math">
+                <strong>u = dx / dt</strong>, the horizontal velocity of the feature
+            </p>
+
+            <p class="pa math">
+                <strong>v = dy / dt</strong>, the vertical velocity of the feature
+            </p>
+
+            <p class="pa">
+                Optical flow operates under the assumption that the brightness of
+                features remains relatively constant between two frames. Let the image
+                intensity at pixel location <em>(x, y)</em> and time <em>t</em> be
+                represented as <em>I(x, y, t)</em>. If a feature moves by
+                <em>(dx, dy)</em> over a small time interval <em>dt</em>, this assumption
+                can be written as:
+            </p>
+
+            <p class="pa math">
+                <em>I(x, y, t) = I(x + dx, y + dy, t + dt)</em>
+            </p>
+
+            <p class="pa">
+                The change in brightness at a pixel is caused by the motion of a feature
+                across it and depends on the derivatives of the intensity in the x and y
+                directions (<em>I<sub>x</sub></em>, <em>I<sub>y</sub></em>) and the
+                velocity of the feature (<em>u</em>, <em>v</em>). In other words, the
+                brightness difference caused by feature motion is approximately equal
+                to the horizontal intensity gradient multiplied by the horizontal
+                velocity, plus the vertical intensity gradient multiplied by the
+                vertical velocity.
+            </p>
+
+            <p class="pa">
+                Mathematically, this can be expressed as:
+            </p>
+
+            <p class="pa">
+                <em>I<sub>x</sub> · u + I<sub>y</sub> · v + I<sub>t</sub> = 0</em>
+            </p>
+
+            <p class="pa">
+                where
+                <em>I<sub>x</sub> = ∂I / ∂x</em>,
+                <em>I<sub>y</sub> = ∂I / ∂y</em>, and
+                <em>I<sub>t</sub> = ∂I / ∂t</em>.
+            </p>
+
+            <p class="pa">
+                The vector <em>(u, v)</em> is unknown. To estimate <em>(u, v)</em>, we
+                use the Lucas–Kanade algorithm, which assumes that small patches of the
+                image share the same motion vector.
+            </p>
+            <p class="pa">Tracked points are determined by Shi-Tomasi Corner Detection. To expand the scope of our motion quantification software, we built in multiple ways of 
+                defining regions of interest, or masks. These masks restrict where Shi-Tomasi can find leaf corners, helping LK 
+                optical flow track leaf points rather than background points. Our tool allows users to create this mask by choosing 
+                between employing an attention mechanism, creating a bounding box, or considering the entire frame, rendering it flexible. 
+                Our attention mechanism generates a mask of the frame, where important subject areas are marked as 255, and pixels that are 
+                not considered during corner detection are marked as 0. To create this mask, we generate an event histogram across sliding 
+                windows of 5 frames. If the intensity change of a pixel exceeds a threshold ±C (with C > 0), an event is accumulated at that 
+                pixel. If the number of accumulated events at a point exceeds a fraction, that pixel is marked as important. Irrelevant areas 
+                are then eroded.
+            </p>
+        </section>
+
+
+        <section class="documentation">
+            <a href="https://docs.opencv.org/3.4/d4/dee/tutorial_optical_flow.html"
+               target="_blank">
+                Optical Flow Documentation
+            </a>
+        </section>
+    </main>
+</body>
+</html>

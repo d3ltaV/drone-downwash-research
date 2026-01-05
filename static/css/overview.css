@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap');
+
+:root {
+    --green: #0C5449;
+    --dg: #053432;
+    --gold: #FFCC33;
+    --white: #FFFFFF;
+    --lg: #f0f0f0;
+    --tg: #555;
+    --t: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+    line-height: 1.7;
+}
+
+body {
+    .header {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        justify-content: center;
+        .uni-logo {
+            grid-column: 1;
+            width: 18vw;
+            height: auto;
+            padding: 2.5vh 3vw 2.5vh 3vw;
+            margin: 0vh 2vw 0vh 2vw;
+        }
+        .right {
+            padding-top: 5vh;
+            .title {
+                text-align: center;
+                font-size: 5.4vh; 
+                grid-column: 2;
+                font-weight: 500;
+            }
+            .nav-bar {
+                display: flex;
+                justify-content: center;
+                padding: 2vh 0vw 4vh 0vw;
+                .l {
+                    text-align: cen;
+                    margin: 0vh 1vw 0vh 1vw;
+                    padding: 2vh 1vw 2vh 1vw;
+                    font-size: 3vh;
+                    color: var(--green);
+                    font-weight: 400;
+                    &:hover {
+                        color: var(--dg);
+                        background-color: var(--lg);
+                    }    
+                }
+            }
+        }
+    }
+    
+    .overview-container {
+        background-color: var(--lg);
+        padding: 6vh 8vw 8vh 8vw;
+        min-height: 80vh;
+        
+        .project {
+            margin-bottom: 6vh;
+            background-color: var(--white);
+            padding: 6vh 6vw 6vh 6vw;
+            border-radius: 1vh;
+            
+            h2 {
+                font-size: 4.5vh;
+                color: var(--dg);
+                font-weight: 500;
+                margin-bottom: 4vh;
+                text-align: center;
+            }
+            
+            .sub {
+                font-size: 3.2vh;
+                color: var(--green);
+                font-weight: 500;
+                margin-top: 4vh;
+                margin-bottom: 2vh;
+            }
+            
+            .abstract {
+                font-size: 2.4vh;
+                color: var(--tg);
+                margin-bottom: 2.5vh;
+            }
+            
+            p {
+                font-size: 2.4vh;
+                color: var(--tg);
+                margin-bottom: 2.5vh;
+            }
+            
+            .goals {
+                font-size: 2.4vh;
+                color: var(--tg);
+                margin-left: 3vw;
+                
+                li {
+                    margin-bottom: 1.5vh;
+                }
+            }
+        }
+
+        .methods {
+            background-color: var(--white);
+            padding: 6vh 6vw 6vh 6vw;
+            border-radius: 1vh;
+            h2 {
+                font-size: 4.5vh;
+                color: var(--dg);
+                font-weight: 500;
+                margin-bottom: 4vh;
+                text-align: center;
+            }
+            
+            .txt {
+                margin-bottom: 10vh;
+                p {
+                    font-size: 2.4vh;
+                    color: var(--tg);
+                    margin-bottom: 2.5vh;
+                }
+            }
+            .method-images {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
+                gap: 2vw;
+                .im {
+                    img {
+                        width: 20vw;
+                        height: 18vw;
+                        object-fit: cover;
+                        border-radius: 1vh;
+                    }
+                    .de {
+                        font-size: 2vh;
+                        color: var(--tg);
+                        width: 20vw;
+                        text-align: center;
+                        margin-top: 1vh;
+                    }
+                }
+
+                .im2 {
+                    img {
+                        width: 35vw;
+                        height: 18vw;
+                        object-fit: cover;
+                        border-radius: 1vh;
+                    }
+                    .de {
+                        font-size: 2vh;
+                        color: var(--tg);
+                        width: 35vw;
+                        text-align: center;
+                        margin-top: 1vh;
+                    }
+                } 
+            }
+        }   
+    }
+}

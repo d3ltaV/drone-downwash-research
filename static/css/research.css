@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap');
+
+:root {
+    --green: #0C5449;
+    --dg: #053432;
+    --gold: #FFCC33;
+    --white: #FFFFFF;
+    --lg: #f0f0f0;
+    --tg: #555;
+    --t: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+    line-height: 1.7;
+}
+
+body {
+    .header {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+
+        .uni-logo {
+            grid-column: 1;
+            width: 18vw;
+            padding: 2.5vh 3vw;
+        }
+
+        .right {
+            padding-top: 5vh;
+
+            .title {
+                text-align: center;
+                font-size: 5.4vh;
+                font-weight: 500;
+            }
+
+            .nav-bar {
+                display: flex;
+                justify-content: center;
+                padding: 2vh 0 4vh 0;
+
+                .l {
+                    margin: 0 1vw;
+                    padding: 2vh 1vw;
+                    font-size: 3vh;
+                    color: var(--green);
+                    font-weight: 400;
+
+                    &:hover {
+                        color: var(--dg);
+                        background-color: var(--lg);
+                    }
+                }
+            }
+        }
+    }
+
+    /* ================= MAIN CONTAINER ================= */
+    .research-container {
+        background-color: var(--lg);
+        padding: 6vh 8vw 8vh 8vw;
+        min-height: 80vh;
+        h2 {
+            font-size: 4.5vh;
+            color: var(--dg);
+            font-weight: 500;
+            margin-bottom: 4vh;
+            text-align: center;
+        }
+
+        .research-section {
+            background-color: var(--white);
+            padding: 6vh 6vw;
+            border-radius: 1vh;
+            margin-bottom: 6vh;
+
+            .sub {
+                font-size: 3.2vh;
+                color: var(--green);
+                font-weight: 500;
+                margin-bottom: 3vh;
+            }
+
+            p {
+                font-size: 2.4vh;
+                color: var(--tg);
+                margin-bottom: 2.8vh;
+                max-width: 75vw;
+            }
+        }
+    }
+
+    /* ================= TABLE STYLING ================= */
+    .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 5vh 0;
+        font-size: 2vh;
+        color: var(--tg);
+        th, td {
+            border: 1px solid #dddddd;
+        }
+
+        caption {
+            caption-side: bottom;
+            font-size: 2vh;
+            color: var(--tg);
+            margin-top: 1.5vh;
+            text-align: center;
+        }
+
+        thead {
+            background-color: var(--lg);
+            th {
+                font-weight: 500;
+                color: var(--dg);
+                padding: 1.5vh 1vw;
+                text-align: center;
+            }
+        }
+
+        tbody {
+            tr {
+                &:nth-child(even) {
+                    background-color: #fafafa;
+                }
+                td {
+                    padding: 1.3vh 1vw;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
